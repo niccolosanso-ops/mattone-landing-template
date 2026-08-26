@@ -15,9 +15,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Inject colori brand cliente da config → CSS custom properties
+  const brandStyle = {
+    ["--accent" as string]: CONFIG.coloreAccent,
+    ["--accent-hover" as string]: CONFIG.coloreAccentHover,
+    ["--accent-soft" as string]: `${CONFIG.coloreAccent}14`, // 8% opacity
+  } as React.CSSProperties;
+
   return (
     <html lang="it" className={jakarta.variable}>
-      <body>{children}</body>
+      <body style={brandStyle}>{children}</body>
     </html>
   );
 }

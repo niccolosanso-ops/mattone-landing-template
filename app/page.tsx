@@ -185,12 +185,22 @@ export default function Home() {
             Consulenza gratuita e in 15 minuti scopri quanto potresti guadagnare in più con {CONFIG.nomeAgenzia}. Zero impegno. Solo chiarezza e numeri reali.
           </p>
           {CONFIG.ghlFormEmbedHtml.includes("PLACEHOLDER") ? (
-            <div style={{ background: "var(--bg-soft)", padding: 48, border: "2px dashed var(--accent)", borderRadius: 16, textAlign: "center" }}>
-              <div className="eyebrow" style={{ marginBottom: 16 }}>⚠️ FORM DA CONFIGURARE</div>
-              <p style={{ color: "var(--text-muted)", fontSize: 15, margin: 0, lineHeight: 1.6 }}>
-                Sostituisci <code style={{ background: "#fff", padding: "2px 8px", color: "var(--accent)", borderRadius: 4, fontSize: 14 }}>ghlFormEmbedHtml</code> in <code style={{ background: "#fff", padding: "2px 8px", color: "var(--accent)", borderRadius: 4, fontSize: 14 }}>lib/config.ts</code> con l'iframe del form GHL del cliente.<br/>
-                Guida: <a href="https://docs.mattone.co/integrazioni/ghl/setup-agenzia-landing" style={{ color: "var(--accent)", textDecoration: "underline" }}>docs.mattone.co</a>
+            <div style={{ background: "var(--bg-soft)", padding: 56, border: "2px dashed var(--accent)", borderRadius: 16, textAlign: "center" }}>
+              <div style={{ fontSize: 48, marginBottom: 16 }}>📋</div>
+              <div className="eyebrow" style={{ marginBottom: 20, fontSize: 15 }}>⚠️ QUI VA MESSO IL FORM GHL EMBED</div>
+              <p style={{ color: "var(--text)", fontSize: 17, margin: "0 0 24px", lineHeight: 1.6, fontWeight: 600 }}>
+                Ole deve incollare qui l'iframe del form GHL del cliente.
               </p>
+              <p style={{ color: "var(--text-muted)", fontSize: 15, margin: "0 0 24px", lineHeight: 1.6 }}>
+                Apri <code style={{ background: "#fff", padding: "3px 10px", color: "var(--accent)", borderRadius: 4, fontSize: 14, fontWeight: 700 }}>lib/config.ts</code> e sostituisci il valore di{" "}
+                <code style={{ background: "#fff", padding: "3px 10px", color: "var(--accent)", borderRadius: 4, fontSize: 14, fontWeight: 700 }}>ghlFormEmbedHtml</code> con l'iframe reale.
+              </p>
+              <p style={{ color: "var(--text-muted)", fontSize: 14, margin: 0, lineHeight: 1.6 }}>
+                📖 Guida step-by-step: <a href="https://docs.mattone.co/integrazioni/ghl/setup-agenzia-landing" style={{ color: "var(--accent)", textDecoration: "underline", fontWeight: 600 }}>docs.mattone.co/integrazioni/ghl/setup-agenzia-landing</a>
+              </p>
+              <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px dashed var(--border)", fontSize: 13, color: "var(--text-dim)" }}>
+                🎨 <strong>Colori azienda personalizzabili</strong>: cambia <code style={{ background: "#fff", padding: "2px 6px", borderRadius: 4, color: "var(--accent)", fontWeight: 700 }}>coloreAccent</code> e <code style={{ background: "#fff", padding: "2px 6px", borderRadius: 4, color: "var(--accent)", fontWeight: 700 }}>coloreAccentHover</code> in <code style={{ background: "#fff", padding: "2px 6px", borderRadius: 4, color: "var(--accent)", fontWeight: 700 }}>lib/config.ts</code> con gli hex del brand cliente.
+              </div>
             </div>
           ) : (
             <div style={{ background: "#fff", padding: 32, border: "1px solid var(--border)", borderRadius: 16 }} dangerouslySetInnerHTML={{ __html: CONFIG.ghlFormEmbedHtml }} />

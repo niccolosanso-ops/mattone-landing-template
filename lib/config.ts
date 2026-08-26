@@ -7,6 +7,12 @@ export const CONFIG = {
   città: "Roma",
   nomeAgente: "Egidio",
 
+  // ─── COLORI BRAND CLIENTE ─────────────────────────────────────────
+  // Cambia questi 2 hex per personalizzare i colori della landing
+  // secondo l'identità dell'agenzia cliente. Il resto rimane bianco/blu.
+  coloreAccent: "#7873F5",       // colore principale (bottoni, titoli evidenziati)
+  coloreAccentHover: "#6660E8",  // versione più scura per hover bottoni
+
   stats: {
     percentualeRendita: "300%",
     ourImmobili: 40,
