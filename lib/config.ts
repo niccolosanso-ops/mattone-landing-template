@@ -1,45 +1,41 @@
 // ═══════════════════════════════════════════════════════════════════
 // CONFIG AGENZIA — cambia SOLO qui i dati per personalizzare la landing.
-// Nulla di tecnico: testi, numeri, colori, embed form GHL.
 // ═══════════════════════════════════════════════════════════════════
 
 export const CONFIG = {
-  // Identità agenzia
   nomeAgenzia: "Dimora Plus",
   città: "Roma",
   nomeAgente: "Egidio",
 
-  // Colore accent (default arancio, per cambiare passa un hex tipo #FF6B00)
-  coloreAccent: "#FF6B00",
-
-  // Numeri per prova sociale
   stats: {
     percentualeRendita: "300%",
     ourImmobili: 40,
     anniEsperienza: 5,
     ratingMedio: "4.9",
+    ratingReviews: 200,
   },
 
-  // Contatti
   telefono: "+39 06 0000 0000",
   email: "info@dimoraplus.it",
 
-  // ─── FORM GHL EMBED ───────────────────────────────────────────────
-  // Ole sostituisce questo con l'iframe reale dal GHL cliente.
-  // Deve essere un tag <iframe ...></iframe> valido.
+  // FORM GHL EMBED — Ole sostituisce con iframe reale dal GHL cliente
   ghlFormEmbedHtml: `<iframe src="https://forms.gohighlevel.com/PLACEHOLDER" style="width:100%;min-height:520px;border:0;background:transparent;" allowfullscreen></iframe>`,
 
-  // Testimonianze (2-3 max)
+  // Testimonianze (min 3, max 6 mostrate in griglia)
   testimonianze: [
-    {
-      quote: "In 6 mesi il mio bilocale a Trastevere rende il triplo dell'affitto tradizionale. Non devo fare niente.",
-      autore: "Marco R.",
-      immobile: "Bilocale a Trastevere",
-    },
-    {
-      quote: "Zero pensieri, bonifico puntuale ogni mese. Team sempre disponibile per qualsiasi cosa.",
-      autore: "Laura B.",
-      immobile: "Trilocale a Prati",
-    },
+    { quote: "Affittare casa era diventato un secondo lavoro. Ora mi godo il tempo libero e il conto cresce da solo.", autore: "Giuseppe T.", città: "Roma" },
+    { quote: "Prima era un incubo tra inquilini, pulizie e problemi. Ora guadagno il doppio e non ci penso più.", autore: "Marco R.", città: "Roma" },
+    { quote: "Ogni mese avevo stress tra check-in e gestione. Adesso è tutto seguito da professionisti e i guadagni sono saliti.", autore: "Laura B.", città: "Roma" },
+    { quote: "Ho scelto l'affitto garantito e ogni mese ho un fisso sul conto. Nessun pensiero.", autore: "Chiara D.", città: "Roma" },
   ],
+
+  // Case study reale (opzionale — se vuoto non appare la sezione)
+  caseStudy: {
+    nome: "Luca",
+    città: "Roma",
+    tipologia: "Bilocale",
+    risultato: "45% in più rispetto all'affitto tradizionale",
+    tempo: "2 settimane",
+    quote: "Non pensavo potesse rendere così tanto. Dimora Plus ha cambiato il mio approccio agli immobili.",
+  },
 } as const;
