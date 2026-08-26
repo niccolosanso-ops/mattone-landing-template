@@ -52,7 +52,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 32, marginTop: 64 }}>
             <StatBig n={`${CONFIG.stats.ourImmobili}+`} label="Immobili in gestione" accent="var(--accent)" />
             <StatBig n={CONFIG.stats.percentualeRendita} label="Aumento rendita medio" accent="var(--accent-2)" />
-            <StatBig n={CONFIG.stats.anniEsperienza} label={`Anni a ${CONFIG.città}`} accent="var(--accent)" />
+            <StatBig n={String(CONFIG.stats.anniEsperienza)} label={`Anni a ${CONFIG.città}`} accent="var(--accent)" />
             <StatBig n={`${CONFIG.stats.ratingMedio}★`} label="Rating medio ospiti" accent="var(--accent-2)" />
           </div>
         </div>
