@@ -27,6 +27,16 @@ export const CONFIG = {
   // FORM GHL EMBED — Ole sostituisce con iframe reale dal GHL cliente
   ghlFormEmbedHtml: `<iframe src="https://forms.gohighlevel.com/PLACEHOLDER" style="width:100%;min-height:520px;border:0;background:transparent;" allowfullscreen></iframe>`,
 
+  // BOOKING EMBED (thank you page) — opzionale
+  // Ole può incollare qui il codice iframe del calendario GHL/Calendly
+  // del cliente. Serve per far prenotare la call SUBITO dopo il form.
+  // Se lasciato con PLACEHOLDER, la sezione booking mostra fallback.
+  bookingEmbedHtml: `<iframe src="https://api.leadconnectorhq.com/widget/booking/PLACEHOLDER" style="width:100%;min-height:600px;border:0;background:transparent;" allowfullscreen></iframe>`,
+
+  // Social / lead magnet (opzionali — se vuoti la sezione non appare)
+  instagramUrl: "",
+  pdfLeadMagnetUrl: "",
+
   // Testimonianze (min 3, max 6 mostrate in griglia)
   testimonianze: [
     { quote: "Affittare casa era diventato un secondo lavoro. Ora mi godo il tempo libero e il conto cresce da solo.", autore: "Giuseppe T.", città: "Roma" },
