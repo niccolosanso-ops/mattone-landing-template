@@ -22,9 +22,12 @@ export default function Home() {
             Il tuo immobile a {CONFIG.città} rende fino al<br/>
             <span style={{ color: "var(--accent)" }}>{CONFIG.stats.percentualeRendita} in più</span> — o non paghi.
           </h1>
-          <p style={{ fontSize: 20, color: "var(--text-muted)", maxWidth: 780, marginBottom: 56, lineHeight: 1.5 }}>
+          <p style={{ fontSize: 20, color: "var(--text-muted)", maxWidth: 780, marginBottom: 40, lineHeight: 1.5 }}>
             Noi facciamo tutto: annunci, foto professionali, ospiti 24/7, pulizie, burocrazia e sostituto d'imposta. Tu ricevi il bonifico ogni mese. Zero pensieri.
           </p>
+          <a href="#form" className="btn" style={{ marginBottom: 40 }}>
+            Richiedi la valutazione gratuita <span>→</span>
+          </a>
           <div style={{ display: "flex", gap: 32, flexWrap: "wrap", color: "var(--text-dim)", fontSize: 13, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em" }}>
             <span>Valutazione gratuita</span>
             <span style={{ color: "var(--border-strong)" }}>·</span>
@@ -108,7 +111,18 @@ export default function Home() {
           <p style={{ fontSize: 19, color: "var(--text-muted)", marginBottom: 48, lineHeight: 1.5 }}>
             Valutazione gratuita e senza impegno. Ti ricontattiamo entro 24 ore.
           </p>
-          <div style={{ background: "var(--bg)", padding: 32, border: "1px solid var(--border)" }} dangerouslySetInnerHTML={{ __html: CONFIG.ghlFormEmbedHtml }} />
+          {CONFIG.ghlFormEmbedHtml.includes("PLACEHOLDER") ? (
+            <div style={{ background: "var(--bg)", padding: 48, border: "2px dashed var(--accent)", textAlign: "center" }}>
+              <div className="eyebrow" style={{ marginBottom: 16 }}>⚠️ FORM DA CONFIGURARE</div>
+              <p style={{ color: "var(--text-muted)", fontSize: 15, margin: 0, lineHeight: 1.6 }}>
+                Sostituisci <code style={{ background: "var(--bg-elevated)", padding: "2px 8px", color: "var(--accent)" }}>ghlFormEmbedHtml</code> in <code style={{ background: "var(--bg-elevated)", padding: "2px 8px", color: "var(--accent)" }}>lib/config.ts</code><br/>
+                con l'iframe del form GHL del cliente (guida:{" "}
+                <a href="https://docs.mattone.co/integrazioni/ghl/setup-agenzia-landing" style={{ color: "var(--accent)", textDecoration: "underline" }}>docs.mattone.co</a>).
+              </p>
+            </div>
+          ) : (
+            <div style={{ background: "var(--bg)", padding: 32, border: "1px solid var(--border)" }} dangerouslySetInnerHTML={{ __html: CONFIG.ghlFormEmbedHtml }} />
+          )}
         </div>
       </section>
 
